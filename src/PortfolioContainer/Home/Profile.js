@@ -1,5 +1,6 @@
 import React from "react";
 import Typical from "react-typical";
+import "./Profile.css";
 export default function Profile() {
 	return (
 		<div className="profile-container">
@@ -31,22 +32,20 @@ export default function Profile() {
 					<div className="profile-details-role">
 						<span className="primary-text">
 							{" "}
-							<h1>
-								<Typical
-									steps={[
-										"Enthusiastic Dev 🔴",
-										2000,
-										"MERN Dev 😎",
-										2000,
-										"Full stack Dev 💻",
-										2000,
-										"React Developer 📱",
-										2000,
-									]}
-									loop={Infinity}
-									wrapper="h2"
-								></Typical>
-							</h1>
+							<Typical
+								steps={[
+									"Enthusiastic Dev 🔴",
+									2000,
+									"MERN Dev 😎",
+									2000,
+									"Full stack Dev 💻",
+									2000,
+									"React Developer 📱",
+									2000,
+								]}
+								loop={Infinity}
+								wrapper="h1"
+							></Typical>
 							<span className="profile-role-tagline">
 								Knack of building applications with front and
 								back end operations.

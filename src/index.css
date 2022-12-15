@@ -53,15 +53,14 @@ body ::-webkit-scrollbar-thumb {
 
 .primary-btn:hover {
   color: aliceblue;
-  border: 2px solid #23aeff;
+  border: 2px solid #04C3FF;
   background-color: #1f2235;
 }
 
 .btn-highlighted {
   color: var(--white);
-
   font-size: 12px;
-  background-color: #23aeff;
+  background-color: #04C3FF;
 }
 @media only screen and (max-width: 568px) {
   .btn-highlighted {
