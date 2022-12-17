@@ -1,13 +1,13 @@
+import "./App.css";
 
-import './App.css';
-import Profile from './PortfolioContainer/Home/Profile';
+import Home from "./PortfolioContainer/Home/Home";
 
 function App() {
-  return (
-    <div className="App">
-      <Profile></Profile>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Home />
+		</div>
+	);
 }
 
 export default App;
