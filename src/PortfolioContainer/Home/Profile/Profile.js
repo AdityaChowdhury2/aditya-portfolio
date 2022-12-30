@@ -1,5 +1,5 @@
 import React from "react";
-import Typical from "react-typical";
+import Typewriter from "typewriter-effect";
 import "./Profile.css";
 export default function Profile() {
 	return (
@@ -32,20 +32,40 @@ export default function Profile() {
 					<div className="profile-details-role">
 						<span className="primary-text">
 							{" "}
-							<Typical
-								steps={[
-									"Enthusiastic Dev 🔴",
-									2000,
-									"MERN Dev 😎",
-									2000,
-									"Full stack Dev 💻",
-									2000,
-									"React Developer 📱",
-									2000,
-								]}
-								loop={Infinity}
-								wrapper="h1"
-							></Typical>
+							<Typewriter
+								options={{
+									strings: [
+										"Enthusiastic Dev 🔴",
+										"MERN Dev 😎",
+										"Full stack Dev 💻",
+										"React Developer 📱",
+									],
+									autoStart: true,
+									loop: true,
+									pauseFor: 1500,
+									delay: 75,
+									wrapperClassName:
+										"profile-details-role-text",
+									cursorClassName:
+										"profile-details-role-cursor",
+								}}
+							/>
+							{/* <Typical
+								options={{
+									strings: [
+										"Enthusiastic Dev 🔴",
+										2000,
+										"MERN Dev 😎",
+										2000,
+										"Full stack Dev 💻",
+										2000,
+										"React Developer 📱",
+										2000,
+									],
+									loop: Infinity,
+									autoStart: true,
+								}}
+							></Typical> */}
 							<span className="profile-role-tagline">
 								Knack of building applications with front and
 								back end operations.
