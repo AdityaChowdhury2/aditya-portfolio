@@ -5,6 +5,9 @@ export default function Profile() {
 	return (
 		<div className="profile-container">
 			<div className="profile-parent">
+				<div className="profile-picture">
+					<div className="profile-picture-background"></div>
+				</div>
 				<div className="profile-details">
 					<div className="colz">
 						<div className="colz-icon">
@@ -80,9 +83,6 @@ export default function Profile() {
 							</button>
 						</a>
 					</div>
-				</div>
-				<div className="profile-picture">
-					<div className="profile-picture-background"></div>
 				</div>
 			</div>
 		</div>

@@ -12,6 +12,9 @@
     align-items: center;
     color: aliceblue;
 }
+.profile-details{
+    /* margin: 0 0 0 120px; */
+}
 .profile-details-name{
     font-size: 24px;
 }
@@ -58,7 +61,7 @@
     border-radius: 50%;
     height: 380px;
     width: 380px;
-    margin: 0 0 0 100px
+    margin: 0 100px 0 0;
 }
 .profile-picture-background{
     height: 92%;
@@ -106,7 +109,7 @@
         margin: 0 !important;
     }
     .profile-parent{
-        flex-direction: column-reverse;
+        flex-direction: column;
         margin: 40px 0 0 0;
     }
     .profile-options{
