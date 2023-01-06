@@ -1,6 +1,7 @@
-*{
+* {
   font-family: 'Poppins', sans-serif;
 }
+
 body {
   margin: 0;
   overflow-y: overlay;
@@ -32,7 +33,7 @@ body ::-webkit-scrollbar-thumb {
   width: 160px;
   cursor: pointer;
   transition: 0.2s;
-  
+
 }
 
 .btn:active {
@@ -43,8 +44,10 @@ body ::-webkit-scrollbar-thumb {
   color: var(--white);
   border: 2px solid linen;
   font-size: 12px;
+  /* background-color: var(--dark-blue); */
   background-color: #1f2235;
 }
+
 /* @media only screen and (max-width: 414px) {
   .primary-btn {
     font-size: 13px;
@@ -53,8 +56,8 @@ body ::-webkit-scrollbar-thumb {
 
 .primary-btn:hover {
   color: aliceblue;
-  border: 2px solid #2C74B3;
-  background-color: #1f2235;
+  border: 2px solid var(--light-blue);
+  /* background-color: (#1f2235); */
 }
 
 .btn-highlighted {
@@ -62,6 +65,7 @@ body ::-webkit-scrollbar-thumb {
   font-size: 12px;
   background-color: #2C74B3;
 }
+
 @media only screen and (max-width: 568px) {
   .btn-highlighted {
     z-index: -900;

@@ -43,6 +43,7 @@ export default function Profile() {
 										"Full stack Dev 💻",
 										"React Developer 📱",
 									],
+									// cursor: ".",
 									autoStart: true,
 									loop: true,
 									pauseFor: 1500,
@@ -50,7 +51,7 @@ export default function Profile() {
 									wrapperClassName:
 										"profile-details-role-text",
 									cursorClassName:
-										"profile-details-role-cursor",
+										"profile-details-role-cursor ",
 								}}
 							/>
 							{/* <Typical
