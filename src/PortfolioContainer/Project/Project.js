@@ -5,15 +5,62 @@ import "./Project.css";
 import shape from "../../../src/assets/Project/shape-bg.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+// const image = require("../../assets/Project/Pizza-delivery-project.jpg");
 
 export const Project = (props) => {
+	const projectDetails = [
+		{
+			heading: "Pizza Delivery",
+			image: "Pizza-delivery-project.jpg",
+			techUsed: ["NodeJs", "ExpressJs", "MongoDB", "SCSS"],
+			description:
+				"This is a very simple project to order pizza and track order status with an admin panel",
+			gitLink:
+				"https://github.com/AdityaChowdhury2/pizza-delivery-website",
+			liveLink: "https://pizza-delivery-website.onrender.com/",
+		},
+		{
+			heading: "Hotel Booking Site",
+			image: "Project_burj-al-arab.jpg",
+			techUsed: ["React", "React-router", "CSS", "Firebase Auth"],
+			description:
+				"This is a Hotel Booking website made with React, React-Router and CSS",
+			gitLink: "https://github.com/AdityaChowdhury2/burj-al-arab-aditya",
+			liveLink: "https://hotel-booking-site.netlify.app",
+		},
+		{
+			heading: "Amazon Like Website",
+			image: "Project-ema-jhon.jpg",
+			techUsed: ["React", "CSS", "React-router", "Firebase Auth"],
+			description:
+				"Trying to create Amazon Like Website where you can order your favourite products",
+			gitLink: "https://github.com/AdityaChowdhury2/amazon-with-react",
+			liveLink: "https://amazon-simple-app.netlify.app/",
+		},
+		{
+			heading: "Simple e-commerce Site",
+			image: "Project-hot-gadget.jpg",
+			techUsed: ["HTML", "Bootstrap", "CSS"],
+			description:
+				"This is a very simple e-commerce site made with HTML and Bootstrap",
+			gitLink: "https://github.com/AdityaChowdhury2/hot-gadgets",
+			liveLink: "https://adityachowdhury2.github.io/hot-gadgets",
+		},
+		{
+			heading: "Simple Food Delivery Website",
+			image: "Project-red-onion.jpg",
+			techUsed: ["React", "React-Bootstrap", "Firebase"],
+			description:
+				"This project is done to order food on meal basis. Google authentication is added to register with this application",
+			gitLink: "https://github.com/AdityaChowdhury2/red-onion-aditya",
+			liveLink: "https://red-onion-aditya.netlify.app/",
+		},
+	];
 	const options = {
 		autoPlay: true,
-		// autoPlayControls: true,
-		autoPlayStrategy: "none",
 		autoPlayInterval: 1000,
 		animationDuration: 1000,
-		animationType: "fadeout",
+		// animationType: "slide",
 		infinite: true,
 		touchTracking: false,
 		disableDotsControls: true,
@@ -21,72 +68,59 @@ export const Project = (props) => {
 		itemsInSlide: 3,
 		responsive: {
 			0: { items: 1 },
-			768: { items: 1 },
+			768: { items: 2 },
 			1024: { items: 3 },
 		},
+		autoPlayStrategy: "default",
 	};
 	return (
-		<div>
+		<>
 			<ScreenHeading title={"Project"} subHeading={"What I have done"} />
 			<section className="project-section" id={props.id}>
-				<div className="container">
+				<div className="container project-container">
 					<div className="row">
-						<AliceCarousel
-							{...options}
-							className="owl-carousel"
-							id="project-carousel"
-						>
-							<div className="col-lg-12">
-								<div className="project-card">
-									<div className="project-image">
-										<img src="" alt="" />
+						<AliceCarousel {...options} id="project-carousel">
+							{projectDetails.map((project, index) => {
+								return (
+									<div className="col-lg-12" key={index}>
+										<div className="project-card">
+											<div className="project-image">
+												<img
+													src={require(`../../../src/assets/Project/${project.image}`)}
+													alt="No internet connection"
+												/>
+											</div>
+											<div className="project-heading">
+												{project.heading}
+											</div>
+											<div className="project-tech">
+												{project.techUsed.join(", ")}
+											</div>
+											<div className="project-description">
+												{project.description}
+											</div>
+											<a
+												href={project.gitLink}
+												target="_blank"
+												rel="noreferrer"
+											>
+												<button className="btn primary-btn project-btn">
+													Github Link
+												</button>
+											</a>
+											<a
+												href={project.liveLink}
+												target="_blank"
+												rel="noreferrer"
+											>
+												<button className="btn btn-highlighted project-btn">
+													Live Demo
+												</button>
+											</a>
+										</div>
 									</div>
-									<div className="project-heading">
-										Lorem ipsum dolor sit amet consectetur,
-									</div>
-									<div className="project-desc">
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elitAdita Doloremque, quis
-										modi. Iure molestiae consequuntur, harum
-										perspiciatis pariatur repellendus enim
-										vel!
-									</div>
-								</div>
-							</div>
-							<div className="col-lg-12">
-								<div className="project-card">
-									<div className="project-image">
-										<img src="" alt="" />
-									</div>
-									<div className="project-heading">
-										Lorem ipsum dolor sit amet consectetur,
-									</div>
-									<div className="project-desc">
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit durjoy Doloremque, quis
-										modi. Iure molestiae consequuntur, harum
-										perspiciatis pariatur repellendus enim
-										vel!
-									</div>
-								</div>
-							</div>
-							<div className="col-lg-12">
-								<div className="project-card">
-									<div className="project-image">
-										<img src="" alt="" />
-									</div>
-									<div className="project-heading">
-										Lorem ipsum dolor sit amet consectetur,
-									</div>
-									<div className="project-desc">
-										Lorem ipsum dolor sit amet consectetur
-										adipisicing elit. Doloremque, quis modi.
-										Iure molestiae consequuntur, harum
-										perspiciatis pariatur repellendus enim
-										vel!
-									</div>
-								</div>
-							</div>
+								);
+							})}
 						</AliceCarousel>
 					</div>
 				</div>
@@ -94,6 +128,6 @@ export const Project = (props) => {
 			<div className="footer-image">
 				<img src={shape} alt="" />
 			</div>
-		</div>
+		</>
 	);
 };
