@@ -43,7 +43,7 @@
 .project-card {
     background-color: var(--white);
     padding: 30px;
-    border-radius: 50px 50px 50px 50px;
+    border-radius: 50px;
     /* position: relative; */
 }
 
@@ -57,11 +57,19 @@
 
 .project-image {
     box-shadow: 10px 15px 10px -15px var(--dark-blue);
+    /* border-radius: 50px; */
+
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+    transition: 1s ease-out;
 }
 
 .project-image img {
     width: 100%;
 }
+
 
 .project-heading {
     margin: 15px 0 10px 0;

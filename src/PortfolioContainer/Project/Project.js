@@ -11,7 +11,7 @@ export const Project = (props) => {
 	const projectDetails = [
 		{
 			heading: "Pizza Delivery",
-			image: "Pizza-delivery-project.jpg",
+			image: "DriveAway-Delivery-System.png",
 			techUsed: ["NodeJs", "ExpressJs", "MongoDB", "SCSS"],
 			description:
 				"This is a very simple project to order pizza and track order status with an admin panel",
@@ -19,18 +19,18 @@ export const Project = (props) => {
 				"https://github.com/AdityaChowdhury2/pizza-delivery-website",
 			liveLink: "https://pizza-delivery-website.onrender.com/",
 		},
-		{
-			heading: "Hotel Booking Site",
-			image: "Project_burj-al-arab.jpg",
-			techUsed: ["React", "React-router", "CSS", "Firebase Auth"],
-			description:
-				"This is a Hotel Booking website made with React, React-Router and CSS",
-			gitLink: "https://github.com/AdityaChowdhury2/burj-al-arab-aditya",
-			liveLink: "https://hotel-booking-site.netlify.app",
-		},
+		// {
+		// 	heading: "Hotel Booking Site",
+		// 	image: "Burj-React-App.png",
+		// 	techUsed: ["React", "React-router", "CSS", "Firebase Auth"],
+		// 	description:
+		// 		"This is a Hotel Booking website made with React, React-Router and CSS",
+		// 	gitLink: "https://github.com/AdityaChowdhury2/burj-al-arab-aditya",
+		// 	liveLink: "https://hotel-booking-site.netlify.app",
+		// },
 		{
 			heading: "Amazon Like Website",
-			image: "Project-ema-jhon.jpg",
+			image: "amazon-React-App.png",
 			techUsed: ["React", "CSS", "React-router", "Firebase Auth"],
 			description:
 				"Trying to create Amazon Like Website where you can order your favourite products",
@@ -39,7 +39,7 @@ export const Project = (props) => {
 		},
 		{
 			heading: "Simple e-commerce Site",
-			image: "Project-hot-gadget.jpg",
+			image: "Hot-Gadgets.png",
 			techUsed: ["HTML", "Bootstrap", "CSS"],
 			description:
 				"This is a very simple e-commerce site made with HTML and Bootstrap",
@@ -48,12 +48,21 @@ export const Project = (props) => {
 		},
 		{
 			heading: "Simple Food Delivery Website",
-			image: "Project-red-onion.jpg",
+			image: "red-onion-React-App.png",
 			techUsed: ["React", "React-Bootstrap", "Firebase"],
 			description:
 				"This project is done to order food on meal basis. Google authentication is added to register with this application",
 			gitLink: "https://github.com/AdityaChowdhury2/red-onion-aditya",
 			liveLink: "https://red-onion-aditya.netlify.app/",
+		},
+		{
+			heading: "E-Learning Website",
+			image: "online-school-platform.png",
+			techUsed: ["HTML", "CSS", "Bootstrap"],
+			description:
+				"An simple Online learning platform made with HTML, CSS and Bootstrap",
+			gitLink: "https://github.com/AdityaChowdhury2/e-school",
+			liveLink: "https://adityachowdhury2.github.io/e-school/",
 		},
 	];
 	const options = {
