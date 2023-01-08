@@ -83,9 +83,9 @@ export const Project = (props) => {
 		autoPlayStrategy: "default",
 	};
 	return (
-		<>
+		<div id={props.id}>
 			<ScreenHeading title={"Project"} subHeading={"What I have done"} />
-			<section className="project-section" id={props.id}>
+			<section className="project-section">
 				<div className="container project-container">
 					<div className="row">
 						<AliceCarousel {...options} id="project-carousel">
@@ -137,6 +137,6 @@ export const Project = (props) => {
 			<div className="footer-image">
 				<img src={shape} alt="" />
 			</div>
-		</>
+		</div>
 	);
 };
