@@ -220,7 +220,7 @@ export default function Resume(props) {
 			<div className="resume-content">
 				<ScreenHeading
 					title={"Resume"}
-					subHeading={"My formal bio details"}
+					subHeading={"My formal details"}
 				/>
 				<div className="resume-card">
 					<div className="resume-bullets">
