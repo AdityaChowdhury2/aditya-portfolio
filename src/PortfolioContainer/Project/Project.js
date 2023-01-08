@@ -5,6 +5,7 @@ import "./Project.css";
 import shape from "../../../src/assets/Project/shape-bg.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import Footer from "../Home/Footer/Footer";
 // const image = require("../../assets/Project/Pizza-delivery-project.jpg");
 
 export const Project = (props) => {
