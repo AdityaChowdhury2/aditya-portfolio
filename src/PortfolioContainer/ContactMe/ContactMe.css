@@ -1,5 +1,5 @@
 .main-container {
-    /* margin-top: 120px; */
+    margin-top: 50px;
     min-height: 100vh;
 }
 
@@ -119,6 +119,15 @@ form {
     /* margin-top: 10px; */
     flex: 0.9;
 }
+
+button .load {
+    width: 100%;
+}
+
+button .load img {
+    width: 60px;
+}
+
 
 .col i {
     padding: 7px;

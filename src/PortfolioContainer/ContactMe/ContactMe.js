@@ -1,5 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import Typewriter from "typewriter-effect";
+
 import Animations from "../../utilities/Animation";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
@@ -30,7 +33,33 @@ export const ContactMe = (props) => {
 		setMessage(e.target.value);
 	};
 
-	console.log(message);
+	const submitForm = async (e) => {
+		e.preventDefault();
+		try {
+			let data = {
+				name,
+				email,
+				message,
+			};
+			setBool(true);
+			const res = await axios.post(`/contact`, data);
+			if (
+				name.length === 0 ||
+				email.length === 0 ||
+				message.length === 0
+			) {
+				setBanner(res.data.msg);
+				toast.error(res.data.msg);
+				setBool(false);
+			} else if (res.status === 200) {
+				setBanner(res.data.msg);
+				toast.success(res.data.msg);
+				setBool(false);
+			}
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
 	return (
 		<div className="main-container" id={props.id || ""}>
@@ -75,7 +104,7 @@ export const ContactMe = (props) => {
 							alt="no internet connection"
 						/>
 					</div>
-					<form action="">
+					<form onSubmit={submitForm}>
 						<p>{banner}</p>
 						<label htmlFor="name">Name</label>
 						<input type="text" onChange={handleName} value={name} />
@@ -98,6 +127,16 @@ export const ContactMe = (props) => {
 							<button type="submit">
 								Send
 								<i className="fa fa-paper-plane" />
+								{bool ? (
+									<b className="load">
+										<img
+											src={require("../../assets/ContactMe/load2.gif")}
+											alt="img not responding"
+										/>
+									</b>
+								) : (
+									""
+								)}
 							</button>
 						</div>
 					</form>
