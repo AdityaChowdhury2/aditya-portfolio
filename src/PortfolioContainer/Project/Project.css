@@ -26,16 +26,16 @@
 .footer-image {
     width: 100%;
     height: 100%;
-    max-width: 1920px;
+    max-width: 2133px;
     overflow: hidden;
     display: flex;
     justify-content: center;
-    margin-top: -110px;
+    margin-top: -139px;
 }
 
 .footer-image img {
     max-width: 100%;
-    height: 130px;
+    height: 139px;
 }
 
 .project-container {
