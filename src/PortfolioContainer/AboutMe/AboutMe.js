@@ -7,7 +7,7 @@ import "./AboutMe.css";
 const myImage = require("../../assets/AboutMe/About-me.png");
 export default function AboutMe(props) {
 	let fadeInScreenHandler = (screen) => {
-		if (screen.fadeScreen !== props.id) return;
+		if (screen.fadeInScreen !== props.id) return;
 		Animations.animations.fadeInScreen(props.id);
 	};
 	const fadeInSubscription =
@@ -38,7 +38,7 @@ export default function AboutMe(props) {
 	};
 	return (
 		<div
-			className="about-me-container screen-container"
+			className="about-me-container screen-container fade-in"
 			id={props.id || ""}
 		>
 			<div className="about-me-parent">
@@ -63,7 +63,14 @@ export default function AboutMe(props) {
 							{renderHighlights()}
 						</div>
 						<div className="about-me-options">
-							<button className="btn primary-btn">Hire Me</button>
+							<button
+								className="btn primary-btn"
+								onClick={() =>
+									ScrollService.scrollHandler.scrollToHireMe()
+								}
+							>
+								Hire Me
+							</button>
 							<a
 								href="AdityaChowdhuryResume.pdf"
 								download="Aditya"

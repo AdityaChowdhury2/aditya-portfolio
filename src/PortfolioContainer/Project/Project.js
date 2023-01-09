@@ -5,9 +5,19 @@ import "./Project.css";
 import shape from "../../../src/assets/Project/shape-bg.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import Animations from "../../utilities/Animation";
+import ScrollService from "../../utilities/ScrollService";
 // const image = require("../../assets/Project/Pizza-delivery-project.jpg");
 
 export const Project = (props) => {
+	let fadeInScreenHandler = (screen) => {
+		if (screen.fadeInScreen !== props.id) return;
+		Animations.animations.fadeInScreen(props.id);
+	};
+
+	const fadeInSubscription =
+		ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
 	const projectDetails = [
 		{
 			heading: "Pizza Delivery",
@@ -83,10 +93,10 @@ export const Project = (props) => {
 		autoPlayStrategy: "default",
 	};
 	return (
-		<div id={props.id}>
+		<div className="fade-in" id={props.id}>
 			<ScreenHeading title={"Project"} subHeading={"What I have done"} />
-			<section className="project-section">
-				<div className="container project-container">
+			<section className="project-section  ">
+				<div className="container project-container ">
 					<div className="row">
 						<AliceCarousel {...options} id="project-carousel">
 							{projectDetails.map((project, index) => {

@@ -1,27 +1,29 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { toast } from "react-toastify";
+import React, { useRef, useState } from "react";
 import Typewriter from "typewriter-effect";
-
+import emailjs from "@emailjs/browser";
 import Animations from "../../utilities/Animation";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import "./ContactMe.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const ContactMe = (props) => {
-	let fadeInScreenHandler = (screen) => {
-		if (screen.fadeScreen !== props.id) return;
-		Animations.animations.fadeInScreen(props.id);
-	};
-
-	const fadeInSubscription =
-		ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+	const form = useRef();
 
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
 	const [banner, setBanner] = useState("");
 	const [bool, setBool] = useState(false);
+
+	let fadeInScreenHandler = (screen) => {
+		if (screen.fadeInScreen !== props.id) return;
+		Animations.animations.fadeInScreen(props.id);
+	};
+
+	const fadeInSubscription =
+		ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
 	const handleName = (e) => {
 		setName(e.target.value);
@@ -33,36 +35,52 @@ export const ContactMe = (props) => {
 		setMessage(e.target.value);
 	};
 
-	const submitForm = async (e) => {
+	const submitForm = (e) => {
 		e.preventDefault();
 		try {
-			let data = {
-				name,
-				email,
-				message,
-			};
-			setBool(true);
-			const res = await axios.post(`/contact`, data);
 			if (
 				name.length === 0 ||
 				email.length === 0 ||
 				message.length === 0
 			) {
-				setBanner(res.data.msg);
-				toast.error(res.data.msg);
+				setBanner("Please Fill all the fields");
+				toast.error("Please Fill all the fields");
 				setBool(false);
-			} else if (res.status === 200) {
-				setBanner(res.data.msg);
-				toast.success(res.data.msg);
-				setBool(false);
+			} else {
+				setBool(true);
+				emailjs
+					.sendForm(
+						"service_pfn7j0f",
+						"template_ryy3zqf",
+						form.current,
+						"NmmBay3jQM0HjDRe2"
+					)
+					.then(
+						(res) => {
+							// console.log(res);
+							if (res.status === 200) {
+								setBanner("Thanks for contacting Aditya");
+								toast.success("Email sent successfully");
+								setBool(false);
+								setName("");
+								setMessage("");
+								setEmail("");
+							}
+						},
+						(error) => {
+							// console.log(error.text);
+							toast.error("Please contact Aditya with Linkedin");
+						}
+					);
 			}
 		} catch (error) {
-			console.error(error);
+			toast.error("Please contact Aditya with Linkedin");
 		}
 	};
 
 	return (
-		<div className="main-container" id={props.id || ""}>
+		<div className="main-container fade-in" id={props.id || ""}>
+			<ToastContainer />
 			<ScreenHeading
 				title={"Contact Me"}
 				subHeading={"Lets Keep In Touch"}
@@ -104,16 +122,22 @@ export const ContactMe = (props) => {
 							alt="no internet connection"
 						/>
 					</div>
-					<form onSubmit={submitForm}>
+					<form ref={form} onSubmit={submitForm}>
 						<p>{banner}</p>
 						<label htmlFor="name">Name</label>
-						<input type="text" onChange={handleName} value={name} />
+						<input
+							type="text"
+							onChange={handleName}
+							value={name}
+							name="name"
+						/>
 
 						<label htmlFor="email">Email</label>
 						<input
 							type="email"
 							onChange={handleEmail}
 							value={email}
+							name="email"
 						/>
 
 						<label htmlFor="message">Message</label>
@@ -121,6 +145,7 @@ export const ContactMe = (props) => {
 							type="text"
 							onChange={handleMessage}
 							value={message}
+							name="message"
 						/>
 
 						<div className="send-btn">

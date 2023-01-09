@@ -3,8 +3,8 @@
     /* background-color: var(--dark-blue); */
     background-image: url("../../../src/assets/Project/bg-1.png");
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-repeat: no-repeat; */
+    background-attachment: scroll;
     /* opacity: 0.8;
     position: relative;
     z-index: -1; */
