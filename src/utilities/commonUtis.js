@@ -3,7 +3,6 @@ import { ContactMe } from "../PortfolioContainer/ContactMe/ContactMe";
 import Home from "../PortfolioContainer/Home/Home";
 import { Project } from "../PortfolioContainer/Project/Project";
 import Resume from "../PortfolioContainer/Resume/Resume";
-
 export const TOTAL_SCREENS = [
 	{
 		screen_name: "Home",

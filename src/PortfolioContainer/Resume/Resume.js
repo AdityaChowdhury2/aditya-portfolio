@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Animations from "../../utilities/Animation";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
@@ -214,6 +214,12 @@ export default function Resume(props) {
 			</div>
 		);
 	};
+	useEffect(() => {
+		return () => {
+			/* UNSUBSCRIBE THE SUBSCRIPTIONS */
+			fadeInSubscription.unsubscribe();
+		};
+	}, [fadeInSubscription]);
 
 	return (
 		<div

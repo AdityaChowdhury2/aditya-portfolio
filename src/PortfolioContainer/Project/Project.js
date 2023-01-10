@@ -1,5 +1,4 @@
 import React from "react";
-
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import "./Project.css";
 import shape from "../../../src/assets/Project/shape-bg.png";
@@ -29,15 +28,7 @@ export const Project = (props) => {
 				"https://github.com/AdityaChowdhury2/pizza-delivery-website",
 			liveLink: "https://pizza-delivery-website.onrender.com/",
 		},
-		// {
-		// 	heading: "Hotel Booking Site",
-		// 	image: "Burj-React-App.png",
-		// 	techUsed: ["React", "React-router", "CSS", "Firebase Auth"],
-		// 	description:
-		// 		"This is a Hotel Booking website made with React, React-Router and CSS",
-		// 	gitLink: "https://github.com/AdityaChowdhury2/burj-al-arab-aditya",
-		// 	liveLink: "https://hotel-booking-site.netlify.app",
-		// },
+
 		{
 			heading: "Amazon Like Website",
 			image: "amazon-React-App.png",
@@ -79,7 +70,7 @@ export const Project = (props) => {
 		autoPlay: true,
 		autoPlayInterval: 1000,
 		animationDuration: 1000,
-		// animationType: "slide",
+		autoPlayStrategy: "default",
 		infinite: true,
 		touchTracking: false,
 		disableDotsControls: true,
@@ -87,16 +78,15 @@ export const Project = (props) => {
 		itemsInSlide: 3,
 		responsive: {
 			0: { items: 1 },
-			768: { items: 2 },
+			768: { items: 3 },
 			1024: { items: 3 },
 		},
-		autoPlayStrategy: "default",
 	};
 	return (
 		<div className="fade-in" id={props.id}>
 			<ScreenHeading title={"Project"} subHeading={"What I have done"} />
-			<section className="project-section  ">
-				<div className="container project-container ">
+			<div className="project-section">
+				<div className="container">
 					<div className="row">
 						<AliceCarousel {...options} id="project-carousel">
 							{projectDetails.map((project, index) => {
@@ -143,7 +133,7 @@ export const Project = (props) => {
 						</AliceCarousel>
 					</div>
 				</div>
-			</section>
+			</div>
 			<div className="footer-image">
 				<img src={shape} alt="" />
 			</div>
